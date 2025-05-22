@@ -1,0 +1,317 @@
+  body {
+    font-family: "Lato",
+      sans-serif;
+    transition: background-color .5s;
+  }
+
+  /* The side navigation menu */
+  .sidenav {
+    height: 100%;
+    /* 100% Full-height */
+    width: 0;
+    /* 0 width - change this with JavaScript */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Stay on top */
+    top: 0;
+    /* Stay at the top */
+    left: 0;
+    background-color: #111;
+    /* Black*/
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    padding-top: 60px;
+    /* Place content 60px from the top */
+    transition: 0.5s;
+    /* 0.5 second transition effect to slide in the sidenav */
+  }
+
+  /* The navigation menu links */
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+
+  /* When you mouse over the navigation links, change their color */
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+
+  /* Position and style the close button (top right corner) */
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+
+  /* estilo para la barra de navegacion */
+  #main {
+    transition: margin-left .5s;
+    padding: 10px;
+    align-self: auto;
+    font-size: 30px;
+    cursor: pointer;
+  }
+
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidenav {
+      padding-top: 15px;
+    }
+
+    .sidenav a {
+      font-size: 18px;
+    }
+  }
+
+  /* opciones del menu lateral*/
+
+  .input {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    background-color: #0D1117;
+    justify-content: center;
+    border-radius: 5px
+  }
+
+  .value {
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    color: white;
+    display: flex;
+    position: relative;
+    gap: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  .value:not(:active):hover,
+  .value:focus {
+    background-color: #21262C;
+  }
+
+  .value:focus,
+  .value:active {
+    background-color: #1A1F24;
+    outline: none;
+  }
+
+  .value::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: -10px;
+    width: 5px;
+    height: 80%;
+    background-color: #2F81F7;
+    border-radius: 5px;
+    opacity: 0;
+  }
+
+  .value:focus::before,
+  .value:active::before {
+    opacity: 1;
+  }
+
+  .value svg {
+    width: 15px
+  }
+
+  /*calendario*/
+
+  #cal {
+    font-family: Arial, sans-serif;
+    width: 800px;
+    background-color: #fff;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    margin-left: 250px;
+    margin-top: 50px;
+  }
+
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #6090e2;
+  }
+
+  .calendar-header button {
+    background-color: transparent;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+  }
+
+  #month-year {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+
+  .calendar-weekdays,
+  .calendar-dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+  }
+
+  .calendar-weekdays div,
+  .calendar-dates div {
+    text-align: center;
+    padding: 10px;
+  }
+
+  .calendar-weekdays {
+    background-color: #6090e2;
+  }
+
+  .calendar-weekdays div {
+    font-weight: bold;
+  }
+
+  .calendar-dates div {
+    border-bottom: 5px solid #5689e7;
+    cursor: pointer;
+  }
+
+  .calendar-dates div:hover {
+    background-color: #94cafd;
+  }
+
+  .current-date {
+    background-color: #0532ac;
+    color: #f80a0a;
+  }
+
+  /*fin de Calendario */
+
+
+
+  /* inicio de el form de calendario*/
+  /* The popup form - hidden by default */
+  .form-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+  }
+
+  /* Add styles to the form container */
+  .form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+  }
+
+  /* Full-width input fields */
+  .form-container input[type=text],
+  .form-container input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+  }
+
+  /* When the inputs get focus, do something */
+  .form-container input[type=text]:focus,
+  .form-container input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+
+  /* Set a style for the submit/login button */
+  .form-container .btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+    opacity: 0.8;
+  }
+
+  /* Add a red background color to the cancel button */
+  .form-container .cancel {
+    background-color: red;
+  }
+
+  /* Add some hover effects to buttons */
+  .form-container .btn:hover,
+  .open-button:hover {
+    opacity: 1;
+  }
+
+  /* fin de form de calendarion */
+
+  /*formulario de dia*/
+
+  /* Add styles here if needed */
+ /* Popup */
+ #popup {
+   background-color: #f0f7ff;
+   /* Azul claro para contraste */
+   color: #0b2e5f;
+   /* Azul oscuro para el texto */
+   padding: 20px;
+   border-radius: 10px;
+   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   margin-top: -20px;
+   margin-left: -250px;
+   transform: matrix3d(50%, 50%);
+   display: none;
+   /* Oculto por defecto */
+ }
+
+ button {
+   background-color: #4c91d8;
+   color: white;
+   border: none;
+   padding: 10px 20px;
+   border-radius: 5px;
+   cursor: pointer;
+   transition: background-color 0.2s;
+ }
+
+ button:hover {
+   background-color: #256aa1;
+ }
+
+ /* Formulario */
+ #formulario {
+   background-color: #f0f7ff;
+   padding: 50px;
+   border-radius: 10px;
+   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+   max-width: 300px;
+   margin: auto;
+   margin-left: 250px;
+   display: none;
+   /* Oculto por defecto */
+ }
+
+ form label {
+   display: block;
+   margin-bottom: 10px;
+   color: #0b2e5f;
+ }
+
+ input[type="time"],
+ input[type="date"],
+ input[type="checkbox"] {
+   margin-top: 5px;
+ }
